@@ -84,6 +84,14 @@ public class ContactController {
 		if ((action != null) && (action.trim().toLowerCase().equals("cancel"))) {
 			return this.list();
 		}
+		/*
+		Sem esse teste quando o usuário clicava no botão "save", era inserido "em branco" 
+		com valor null em todos os campos.
+		Ass: EriclesSystem
+		*/
+		if ((action != null) && (action.trim().toLowerCase().equals("save"))) {
+			return this.list();
+		}
 
 		if (LOGGER.isInfoEnabled()) {
 			LOGGER.info(String.format("Saving the contact [%s].", contact));
